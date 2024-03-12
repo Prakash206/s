@@ -3,22 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Special  offer by official RONB</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            overflow-x: hidden;
+        }
+        
+        header {
+            position: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid crimson;
+            z-index: 1;
+            width: 100%;
+            height: 10%;
+            background-color: turquoise;
+            padding: 0 1rem;
+        }
+        .food_logo {
+            width: 100px;
+            border-radius: 50%;
+        }
+        .navigation ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+        .navigation a {
+            text-decoration: none;
+            color: blueviolet;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+        .navigation a:hover {
+            color: magenta;
+        }
+        .item_added {
+            margin-left: auto;
+            color: palevioletred;
+            text-decoration: overline;
+        }
+        
+        .section1 {
+            height: 80vh;
+            background-color: gold;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            text-align: center;
+        }
+        footer {
+            background-color: burlywood;
+            width: 100%;
+            height: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .section2 {
+            background-color: blue;
+            height: 100vh;
+        }
+    </style>
 </head>
 <body>
-    <h2>Biggest fan participation program in routine of nepal banda(RONB)</h2>
-    <p>Sign in to win Rs 50 and nike shoes</p>
-    <P>make sure to enter correct email and password to get in.</P>
-    <form action="register.html" method="post">
-        
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
-        
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
-        
-        <input type="submit" value="Register">
-    </form>
+    <header>
+        <div class="logo">
+            <img src="food recoomnedation logo.png" class="food_logo" alt="food/logo">
+        </div>
+        <div class="navigation">
+            <ul>
+                <li><a href="#">Measurement</a></li>
+                <li><a href="#">Product</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </div>
+        <div class="item_added">
+            <p id="get_here">Welcome premkhadka2060@gmail.com</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="section1">
+            <div class="container">
+                <h1>Food Recommendation System</h1>
+                <div class="form-group">
+                    <label>Weight (kg):</label>
+                    <input type="number" id="weight" name="weight" placeholder="Enter your weight">
+                </div>
+                <div class="form-group">
+                    <label>Height (cm):</label>
+                    <input type="number" id="height" name="height" placeholder="Enter your height">
+                </div>
+                <div class="form-group">
+                    <label>Age:</label>
+                    <input type="number" id="age" name="age" placeholder="Enter your age">
+                </div>
+                <button type="submit" onclick="show()">Go</button>
+                <p id="paragraph_show"></p>
+            </div>
+        </section>
+        <section class="section2"></section>
+    </main>
+
+    <footer>
+        <!-- <button class="btn btn-success" style="margin: 10px"><a href="user.php">Sign up</a></button> -->
+        <!-- <button class="btn btn-success" style="margin: 10px"><a href="login.php">Logout</a></button> -->
+    </footer>
+
+    <script>
+        function show() {
+            let weight = document.getElementById('weight').value;
+            let height = document.getElementById('height').value;
+            let age = document.getElementById('age').value;
+            let paragraph_show = document.getElementById('paragraph_show');
+
+            if (age <= 19 && height <= 49 && weight <= 59) {
+                paragraph_show.innerHTML = `Your age, height, and weight are: ${weight}, ${height}, ${age}. Eat eggs, milk, and spicy food.`;
+            } else if (age <= 39 && height <= 99 && weight <= 79) {
+                paragraph_show.innerHTML = `Your age, height, and weight are: ${weight}, ${height}, ${age}. Do pull-ups and eat healthy food.`;
+            } else {
+                paragraph_show.innerHTML = `Your age, height, and weight are: ${weight}, ${height}, ${age}. Regular jogging is recommended.`;
+            }
+        }
+    </script>
 </body>
 </html>
